@@ -1,0 +1,869 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+
+/* Variaveis */
+:root {
+    --cor0: #ffff;
+    --cor1: #000000;
+    --cor2: #39ff14;
+    --cor3: #a4a4a4;
+    --cor4: black;
+    --cor5: 0px 0px 10px rgba(255, 255, 255, 0.366);
+    --cor6: 0px 0px 40px  rgba(255, 255, 255, 0.116);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos gerais */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--cor1);
+    height: 100vh;
+    font-family: 'Noto Sans', sans-serif;
+    transition: .5s;
+}
+
+main{
+    padding-top: 250px ;
+}
+
+.titulo h2{
+    text-align: center;
+    font-size: 32px;
+    margin: 50px 0px;
+    color: var(--cor0);
+}
+
+.titulo span {
+    color: var(--cor2);
+}
+
+span {
+    color: var(--cor2);
+}
+
+
+.divisao{
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.botao  button {
+    padding: 15px 42px;
+    font-size: 18px;
+    font-weight: 550;
+    border-radius: 30px;
+    border: 0px;
+    cursor: pointer;
+    background-color: var(--cor2);
+    color: var(--cor4);
+    
+}
+
+
+.botao button:hover{
+    box-shadow: 0px 0px 8px var(--cor2);
+    transform: scale(1.1);
+    transition: 0.7s;
+}
+
+section, header {
+    padding: 80px 6%;
+}
+
+header {
+    z-index: 777;
+    transition: 0.4s;
+}
+
+/* Cabeçalho */
+
+header {
+    position: fixed;
+    width: 100%;
+    
+    
+}
+
+body .logo2 {
+    display: none;
+}
+
+
+header.flex{
+    padding: 40px;
+    
+}
+
+header  .divisao{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a{
+    color: var(--cor3);
+    font-size: 17px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+nav.menu  a:hover{
+    color: var(--cor0);
+    transform: scale(1.2);
+    transition: 0.7s;
+}
+
+nav.menu ul li{
+    display: inline-block;
+    padding: 0px 45px;
+}
+
+.logo h2 {
+    color: var(--cor0);
+    font-family: "Chivo", sans-serif;
+    
+
+    font-style: normal;
+}
+
+/* js efeito rolagem */
+
+header.rolagem{
+    background-color: rgb(0, 0, 0);
+    padding-top: 45px;
+    padding-bottom: 50px;   
+    
+    
+}
+
+.light.rolagem {
+    background-color: white;
+}
+
+/* menu mobile */
+
+.menu_mobile {
+    position: fixed;
+    background-color: var(--cor1);
+    width: 0%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    display: none;
+    transition: .5s;
+   
+}
+
+.menu_mobile nav ul {
+    text-align: right;
+    
+    margin-top: 1px;
+    
+}
+
+.menu_mobile nav ul li a{
+    color: var(--cor0);
+    font-size: 20px;
+    margin: 10px 0%;
+    font-weight: 300;
+    padding: 20px 5%;
+    
+    
+}
+
+.menu_mobile nav ul li a:hover {
+    background-color: var(--cor2);
+    display: block;
+    color: var(--cor1);
+    font-weight: 500;
+    transition: .8s;
+    
+    
+}
+
+.menu_mobile .fechar_menu {
+  padding: 15px 6%;
+}
+
+.fechar_menu i {
+    font-size: 40px;   
+}
+
+
+.overflow_menu {
+    position: fixed;
+    background-color: #000000d1;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 8888;
+    display: none;
+}
+
+.abrir_menu {
+    color: var(--cor2);
+    font-size: 40px;
+    display: none;
+   
+}
+
+/* javascript menu */
+
+
+.menu_mobile.abrir_menujs{
+    width: 70%;
+}
+
+.menu_mobile.abrir_menujs ~ .overflow_menu {
+    display: block;
+}
+
+
+/* darkmode */
+
+header .trilho {
+    background-color: rgb(253, 232, 232);
+    width: 80px;
+    height: 35px;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: 1s;
+    display: block;
+    box-shadow : 0px 0px 10px rgba(255, 255, 255, 0.676);
+    
+}
+
+header .indicador1{
+    width: 35px;
+    height: 35px;
+    border-radius: 60%;
+    transform: scale(.85);
+    margin: 0px 1px;
+    position: absolute;
+    left: 0;
+    transition: .5s;
+    display: block;
+    background-color: rgb(0, 0, 0);
+   
+}
+
+.trilho #lua{
+    display: block;
+    text-align: center;
+    justify-content: center;
+    left: 50px;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    position: absolute;
+}
+
+
+.trilho #sol{
+    display: none;
+    text-align: center;
+    justify-content: center;
+    left: 0;
+    color: #000000d1;
+    font-size: 22px;
+    margin-top: 2px;
+    position: absolute;    
+}
+
+header .indicador2{
+    background-color: rgba(255, 255, 255, 0.672);
+    width: 35px;
+    height: 35px;
+    border-radius: 60%;
+    transform: scale(.85);
+    margin: 0px 1px;
+    position: absolute;
+    left: 0;
+    transition: .5s;
+    display: block;
+    opacity: 0;
+}
+
+
+
+
+.trilho.light {
+    background-color: rgb(90, 182, 90);
+}
+
+
+.trilho.light .indicador1 {
+    left: 33px;
+    opacity: 0;
+}
+
+.trilho.light #lua {
+    display: none;
+}
+
+.trilho.light #sol {
+    right: 43px;
+    display: block;
+   
+}
+
+.trilho.light .indicador2{
+    left: 43px;
+    opacity: 1;
+}
+
+body.light .logo {
+    display: none;
+}
+
+
+body.light .logo2 {
+    display: block;
+}
+
+
+body.light {
+    background-color: #ffffff48;
+    --cor1: #ffff;
+    --cor0: #000000;
+    --cor3: black;
+    --cor5: 0px 0px 20px rgba(0, 0, 0, 0.611);
+    --cor6: 0px 0px 40px 5px rgba(0, 0, 0, 0.453);
+}
+
+
+body.light .formulario input::placeholder  {
+    color: rgb(29, 28, 28);
+}
+
+body.light textarea::placeholder {
+    color: rgb(29, 28, 28);
+}
+
+/* Topo do portfolio */
+
+
+section .topo_site {
+    padding: 0px 4% 20px 4%;
+    
+}
+
+section.topo_site  .flex {
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+}
+
+
+.topo_site .texto > h1 {
+    color: var(--cor0);
+    font-size: 40px;
+    line-height: 50px;
+}
+
+.topo_site .texto > p {
+    color: var(--cor0);
+    font-size: 19px;
+    margin: 40px 0;
+}
+
+.topo_site .botao {
+    display: flex;
+    text-align: center;
+    gap: 50px;
+    
+    
+}
+
+.animacao {
+    font-weight: 200;
+    text-align: start;
+    justify-content: center;
+    font-size: 40px;
+    color: var(--cor0);
+    padding-bottom: 200px;
+    font-family: "EB Garamond", serif;
+    
+}
+
+
+
+.animacao  p {
+    font-size: 70px;
+    width: 14ch;
+    position: absolute;
+    white-space: nowrap;
+    text-align: start;
+    justify-content: start;
+    overflow: hidden;
+    color: var(--cor2);
+    border-right: solid 2px var(--cor2) ;
+    font-family: "EB Garamond", serif;
+    animation: digitar 2.4s infinite steps(20) alternate-reverse;
+}
+
+
+/* animacao */
+
+@keyframes digitar {
+    from {width: 0ch;}
+}
+
+.topo_site .imagem_topo {
+    position: relative;
+    animation: flutuar 1.5s ease-in-out infinite alternate;
+}
+
+ @keyframes flutuar{
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 35px;
+    }
+} 
+
+/* ESPECIALIDADES */
+
+section.especialidades{
+    padding: 200px 4% 20px 4%;
+    margin: 80px 0px;
+    
+}
+
+.titulo h1 {
+    color: var(--cor0);
+    align-items: center;
+    display: flex;
+}
+
+i {
+    color: var(--cor2);
+}
+
+.especialidades {
+    color: var(--cor0);
+    padding: 90px 4%;
+}
+
+.especialidades_caixas{
+    display: flex;
+    justify-content: space-around;
+    gap: 80px;
+    margin: 20px 0px;
+}
+
+.especialidades_caixas .bibi_box {
+    margin: 20px 0;
+    padding: 40px;
+    cursor: pointer;
+}
+
+.bibi_box:hover{
+    border-radius: 40px;
+    box-shadow: var(--cor5);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+
+.especialidades_caixas .bibi_box i{
+    font-size: 60px;
+    padding: 2px;
+    padding-right: 20px;
+}
+
+.especialidades_caixas .bibi_box h3{
+    font-size: 30px;
+    margin: 15px 0px;
+}
+
+.especialidades_caixas .bibi_box p {
+    text-align: justify;
+}
+
+.especialidades #git p {
+    font-size: 1.2em;
+    text-align: start;
+}
+
+
+/* Sobre mim */
+
+section.sobre_mim {
+    padding: 250px 2% 50px 2%;
+  
+    margin-bottom: 100px;
+}
+
+section.sobre_mim .flex {
+    gap: 90px;
+}
+
+.texto_sobre h2 {
+    margin: 60px 0px 20px 0px;
+    font-size: 40px;
+    color: var(--cor0);
+    padding: 20px 0px;
+    line-height: 38px;
+}
+
+.texto_sobre p {
+    color: var(--cor0);
+    margin: 0px 0px 30px 0px;
+    font-size: 18px;
+    text-align: justify;
+    line-height: 20px;
+    
+}
+
+.texto_sobre i {
+    color: var(--cor4);
+    font-size: 30px;
+}
+
+.texto_sobre  button {
+    width: 53px;
+    height: 53px;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--cor2);
+    margin: 0px 10px 0px 0px;
+    cursor: pointer;
+}
+
+.texto_sobre button:hover{
+    box-shadow: 0px 0px 8px var(--cor2);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+
+/* Portfólio */
+
+.portfolio {
+    padding: 180px 4% 40px 4%;
+    box-shadow: var(--cor6);
+}
+
+.portfolio a {
+    text-decoration: none;
+}
+
+.portfolio .titulo {
+
+    margin: 50px 0px;
+
+}
+
+.portfolio .titulo h2 {
+    font-size: 38px;
+
+}
+
+.portfolio .flex {
+    justify-content: space-around;
+    align-items: center;
+
+}
+    
+.projetos {
+    background-color: var(--cor2);
+    width: 400px;
+    height: 600px;
+    margin: 35px 0px;
+    justify-content: space-around;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: 100% 0%;
+    cursor: pointer;
+    
+}
+
+.projetos:hover{
+    background-size: cover;
+    background-position: 100% 100%;
+    transition: 6s;
+}
+
+
+.overlaw {
+    background-color: #000000bb;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 23px;
+    color: white; 
+    font-weight: 600;
+    opacity: 0;
+}
+
+.overlaw:hover {
+    opacity: 1;
+    box-shadow: 0px 0px 40px 2px rgba(255, 255, 255, 0.075);
+}
+
+
+/* Formulario */
+
+section.formulario {
+    padding: 150px 4% 60px 4%;
+    
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+form input , textarea {
+    width: 100%;
+    background-color: #565656b3;
+    border: none;
+    outline: none;
+    padding: 20px 15px;
+    border-radius: 10px;
+    color: var(--cor0);
+    font-size: 18px;
+}
+
+form textarea {
+    resize: none;
+    max-height: 200px;
+    font-size: 19px;
+}
+
+form .btn-enviar {
+    text-align: center;
+    margin-top: 20px;
+}
+
+form .btn-enviar input {
+    justify-content: center;
+    width: 200px;
+    background-color: var(--cor2);
+    color: var(--cor4);
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+.btn-enviar input:hover {
+    box-shadow: 0px 0px 8px var(--cor2);
+    transform: scale(1.1);
+    transition: 0.7s;
+    cursor: pointer;
+}
+
+
+/* cabeçalho */
+
+footer {
+    margin-top: 40px;
+    padding: 40px 4%;
+    box-shadow: var(--cor6);
+}
+
+footer .flex {
+    justify-content: space-between;
+    border-bottom:solid var(--cor2);
+    padding: 15px 0px;
+}
+
+.icones i {
+    color: var(--cor4);
+    font-size: 30px;
+}
+
+.icones button {
+    width: 53px;
+    height: 53px;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--cor2);
+    margin: 0px 10px 0px 0px;
+    cursor: pointer;
+
+}
+
+button:hover{
+    box-shadow: 0px 0px 8px var(--cor2);    
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.e-mail {
+    padding: 25px 15px;
+    display:flex;
+    align-items: center;
+    text-align: center;
+    justify-content: start;
+    
+}
+
+.e-mail i {
+    font-size: 25px;
+}
+
+.e-mail p {
+    color: var(--cor0);
+    font-size: 18px;
+    margin: 0px 10px;
+    padding: 0px
+}
+
+
+
+/* responsivo */
+
+
+@media screen and (max-width: 1365px) {
+    .projetos {
+        width: 350px;
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 1324px) {
+    .menu {
+        display: none;
+    }
+
+    main {
+        padding-top: 100px;
+    }
+
+
+    header .botao {
+        display: none;
+    }
+
+    .abrir_menu {
+        display: block;
+        font-size: 50px;
+        
+    }
+
+    .menu_mobile {
+        display: block;
+       
+    }
+
+    .topo_site{
+        text-align: start;
+        margin-top: 130px;
+        
+    }
+
+    .especialidades_caixas {
+        flex-direction: column;
+        max-width: 95%;
+        max-height: 95%;
+        align-items: center;
+        margin: 0 4%;
+    }
+
+    .Especialidades .titulo {
+        margin-top: -20%;
+    }
+
+    .topo_site .flex {
+        flex-direction: column-reverse;
+    }
+
+    .portfolio .flex{
+        flex-direction: column;
+    }
+
+   
+}
+
+@media screen and (max-width: 1110px) {
+
+    .sobre_mim .flex{
+        flex-direction: column-reverse;
+        text-align: center;
+        margin: 0px 4%;
+    }
+
+    section.Especialidades {
+        margin-bottom: 2px;
+    }
+
+    .sobre_mim .img_sobre {
+        margin: 10px 0px;
+       
+    }
+
+   section.sobre_mim {
+    padding: 150px 0px 30px 0px;
+   }
+
+}
+
+@media screen and (max-width: 623px) {
+
+    .sobre_mim h2{
+        font-size: 38px;
+    }
+
+    footer .flex{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .topo_site .botao {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .animacao{
+        font-size: 20px;
+    }
+
+    .animacao p {
+        font-size: 45px;
+    }
+
+    .texto .botao {
+        text-align: center;
+    }
+
+    main {
+        padding-top: 5px;
+    }
+
+    .animacao p {
+        animation: digitar 2.2s infinite steps(18) alternate-reverse;
+    }
+
+  
+    
+}
+
